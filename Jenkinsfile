@@ -4,6 +4,7 @@ pipeline {
     stage('shuchu ') {
       steps {
         echo 'Ok'
+        build 'saas'
       }
     }
   }
