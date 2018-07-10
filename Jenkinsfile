@@ -7,12 +7,6 @@ pipeline {
         checkout([$class: 'SubversionSCM', additionalCredentials: [], excludedCommitMessages: '', excludedRegions: '', excludedRevprop: '', excludedUsers: '', filterChangelog: false, ignoreDirPropChanges: false, includedRegions: '', locations: [[cancelProcessOnExternalsFail: true, credentialsId: 'dafdb735-7cae-4d2d-a459-609a3f4f98e1', depthOption: 'infinity', ignoreExternalsOption: true, local: '.', remote: 'https://192.168.1.15/svn/saasshop/trunk/source/SaaS']], quietOperation: false, workspaceUpdater: [$class: 'UpdateUpdater']])
       }
     }
-    stage('CheckStyle') {
-      steps {
-        echo 'CheckStyle'
-        sh 'export JAVA_HOME=/usr/java/jdk1.7.0_80;export JRE_HOME=${JAVA_HOME}/jre;export MAVEN_HOME=/usr/local/maven3;export PATH=${PATH}:${MAVEN_HOME}/bin;mvn checkstyle:checkstyle'
-      }
-    }
     stage('Build') {
       steps {
         echo 'Building-war'
