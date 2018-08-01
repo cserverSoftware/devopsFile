@@ -2,24 +2,20 @@ pipeline {
   agent any
   stages {
     //检出阶段开始
-    stage('check out') { 
+    stage('检出') { 
       parallel {
-        stage('check out') {
-          steps {
-            echo 'check out'
-          }
-        }
-        stage('parallel1ofcheck out') {
+        
+        stage('检测代码') {
           steps {
             echo 'parallel1ofcheck out'
           }
         }
-        stage('parallel2ofcheck out') {
+        stage('准备检出') {
           steps {
             echo 'parallel2ofcheck out'
           }
         }
-        stage('parallel3ofcheck out') {
+        stage('检出完成') {
           steps {
             echo 'parallel3ofcheck out'
           }
@@ -27,14 +23,14 @@ pipeline {
       }
     } //检出阶段结束
      //构建阶段开始
-    stage('build') {
+    stage('构建') {
       parallel {
         stage('build') {
           steps {
             echo 'build'
           }
         }
-        stage('Paralle1OfBuild') {
+        stage('开始构建') {
           steps {
             echo 'Paralle1OfBuild'
           }
